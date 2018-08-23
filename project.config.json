@@ -1,8 +1,6 @@
 {
-	"description": "项目配置文件。",
-	"packOptions": {
-		"ignore": []
-	},
+	"miniprogramRoot": "./miniprogram",
+	"cloudfunctionRoot": "./cloudfunctions",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -10,11 +8,8 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"compileType": "miniprogram",
-	"libVersion": "2.2.3",
 	"appid": "wxe38919acab1b8942",
 	"projectname": "leona",
-	"isGameTourist": false,
 	"condition": {
 		"search": {
 			"current": -1,
@@ -24,13 +19,22 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "db guide",
+					"pathName": "pages/databaseGuide/databaseGuide"
+				}
+			]
 		}
 	}
 }
