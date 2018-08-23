@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-23 16:44:33
+ * @Last Modified time: 2018-08-23 17:51:00
  */
 import { EpisodeModel } from '../../models/episode'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -83,6 +83,7 @@ Page({
           episodeData: res[0],
           status: SUCCESS
         })
+        console.log(this.data)
       })
     } catch(err) {
       this.setData({

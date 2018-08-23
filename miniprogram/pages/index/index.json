@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "",
   "usingComponents": {
-    "skeleton": "/components/skeleton/index"
+    "skeleton": "/components/skeleton/index",
+    "date-info": "/components/date-info/index"
   }
 }

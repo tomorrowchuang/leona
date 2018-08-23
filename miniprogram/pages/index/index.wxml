@@ -2,9 +2,15 @@
   <block wx:if='{{ status === "PENDING" }}'>
     <skeleton cover='{{ false }}' />
   </block>
-  <block wx:if='{{ status === "SUCCESS" }}'>
+  <block wx:if='{{ status === "SUCCESS" && episodeData }}'>
     <view class="header" >
-      
+      <date-info ep='{{ episodeData.index }}' />
+      <view class="share-icon" />
+      <button
+        plain
+        open-type='share'
+        class='share-icon-tap-area'
+      />
     </view>
   </block>
 </view>
