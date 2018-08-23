@@ -6,11 +6,7 @@
     <view class="header" >
       <date-info ep='{{ episodeData.index }}' />
       <view class="share-icon" />
-      <button
-        plain
-        open-type='share'
-        class='share-icon-tap-area'
-      />
+      <button plain open-type='share' class='share-icon-tap-area' />
     </view>
   </block>
 </view>
