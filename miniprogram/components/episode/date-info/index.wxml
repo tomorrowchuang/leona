@@ -1,0 +1,21 @@
+<wxs module='helper' >
+  var getIndex = function(num) {
+    var val = num < 10 ? '0' + num : num
+    return val
+  }
+  module.exports = {
+    getIndex: getIndex
+  }
+</wxs>
+
+<view class='container' >
+  <view class='index-container'>
+    <text class='plain' >Ep.</text>
+    <text class='index' >{{ helper.getIndex(ep) }}</text>
+    <view class='line'></view>
+  </view>
+  <view class='date-container' >
+      <text class='month' >{{ month }}</text>
+      <text class='year' >{{ year }}</text>
+  </view>
+</view>

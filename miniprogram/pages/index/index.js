@@ -1,9 +1,13 @@
 /*
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-08-21 17:08:03 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-08-23 17:51:00
  */
+import { EpisodeModel } from '../../models/episode'
+import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
+
+let episodeModel = new EpisodeModel()
 
 Page({
 
@@ -11,14 +15,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    episodeData: null,
+    status: DEFAULT,
+    errMsg: '不妙，出错了'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this._fetchData()
   },
 
   /**
@@ -68,5 +74,24 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  _fetchData: function () {
+    try{
+      episodeModel.getLatest(res => {
+        this.setData({
+          episodeData: res[0],
+          status: SUCCESS
+        })
+        console.log(this.data)
+      })
+    } catch(err) {
+      this.setData({
+        status: FAIL
+      })
+    }
+    this.setData({
+      status: PENDING
+    })
   }
 })

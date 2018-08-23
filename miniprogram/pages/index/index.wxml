@@ -1,2 +1,13 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="container" >
+  <block wx:if='{{ status === "PENDING" }}'>
+    <skeleton cover='{{ false }}' />
+  </block>
+  <block wx:if='{{ status === "SUCCESS" && episodeData }}'>
+    <view class="header" >
+      <date-info ep='{{ episodeData.index }}' />
+      <view class="share-icon" />
+      <button plain open-type='share' class='share-icon-tap-area' />
+    </view>
+    <episode-content content='{{ episodeData }}' />
+  </block>
+</view>
