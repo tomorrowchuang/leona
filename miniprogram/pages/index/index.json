@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "skeleton": "/components/skeleton/index"
+  }
+}

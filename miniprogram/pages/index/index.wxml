@@ -1,2 +1,10 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="container" >
+  <block wx:if='{{ status === "PENDING" }}'>
+    <skeleton cover='{{ false }}' />
+  </block>
+  <block wx:if='{{ status === "SUCCESS" }}'>
+    <view class="header" >
+      
+    </view>
+  </block>
+</view>
