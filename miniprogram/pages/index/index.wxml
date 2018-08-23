@@ -8,5 +8,6 @@
       <view class="share-icon" />
       <button plain open-type='share' class='share-icon-tap-area' />
     </view>
+    <episode-content content='{{ episodeData }}' />
   </block>
 </view>
