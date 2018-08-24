@@ -1,6 +1,6 @@
 <view class='container' >
-  <view class='icon {{ isFirst ? "pre-page-disable" : "pre-page" }}' />
-  <view class='icon {{ isLatest ? "next-page-disable" : "next-page" }}' />
+  <view class='icon {{ isLatest ? "pre-page-disable" : "pre-page" }}' />
+  <view class='icon {{ isFirst ? "next-page-disable" : "next-page" }}' />
   <view class='pre-btn' bind:tap='handlePreClick' />
   <view class='next-btn' bind:tap='handleNextClick' />
 </view>

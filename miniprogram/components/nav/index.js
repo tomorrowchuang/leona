@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-24 11:56:35 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-24 14:46:35
+ * @Last Modified time: 2018-08-24 15:11:13
  */
 
 Component({
@@ -26,11 +26,11 @@ Component({
    */
   methods: {
     handlePreClick: function (ev) {
-      if (!this.properties.isFirst) this.triggerEvent('pre', {})
+      if (!this.properties.isLatest) this.triggerEvent('pre', {})
     },
 
     handleNextClick: function (ev) {
-      if (!this.properties.isLatest) this.triggerEvent('next', {})
+      if (!this.properties.isFirst) this.triggerEvent('next', {})
     }
   }
 })
