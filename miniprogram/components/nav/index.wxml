@@ -1,0 +1,6 @@
+<view class='container' >
+  <view class='icon pre-page' />
+  <view class='icon next-page' />
+  <view  class='pre-btn' />
+  <view  class='next-btn' />
+</view>

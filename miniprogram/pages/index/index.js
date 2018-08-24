@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-23 17:51:00
+ * @Last Modified time: 2018-08-24 11:31:42
  */
 import { EpisodeModel } from '../../models/episode'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -73,7 +73,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return {
+      // title: this.data.episodeData.title
+    }
   },
 
   _fetchData: function () {

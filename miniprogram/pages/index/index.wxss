@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-23 16:27:22 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-23 17:54:25
+ * @Last Modified time: 2018-08-24 11:55:11
  */
 
 .container {
@@ -46,4 +46,10 @@ skeleton {
   width: 100rpx;
   height: 100%;
   border:none;
+}
+
+.nav-container {
+  position: absolute;
+  bottom: 40rpx;
+  width: 100%;
 }
