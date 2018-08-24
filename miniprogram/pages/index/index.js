@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-24 15:52:55
+ * @Last Modified time: 2018-08-24 18:34:20
  */
 import { EpisodeModel } from '../../models/episode'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -92,7 +92,7 @@ Page({
     try{
       episodeModel.getLatest(res => {
         this.setData({
-          episodeData: res[0],
+          episodeData: res,
           status: SUCCESS,
           isFirst: res.index === 1 ? true : false
         })
@@ -109,17 +109,18 @@ Page({
 
   _updateepisodeData: function (nextOrPrev) {
     const { index } = this.data.episodeData
-    episodeModel.getEpisode(index, nextOrPrev, res => {
-      this.setData({
-        episodeData: res[0],
-        status: SUCCESS,
-        isFirst: episodeModel.isFirst(res[0].index),
-        isLatest: episodeModel.isLatest(res[0].index)
-      })
-    })
     this.setData({
       status: PENDING
     })
+    wx.nextTick(() => {
+      episodeModel.getEpisode(index, nextOrPrev, res => {
+        this.setData({
+          episodeData: res,
+          status: SUCCESS,
+          isFirst: episodeModel.isFirst(res.index),
+          isLatest: episodeModel.isLatest(res.index)
+        })
+      })
+    })
   }
-
 })
