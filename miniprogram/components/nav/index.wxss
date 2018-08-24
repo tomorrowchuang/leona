@@ -1,0 +1,56 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-08-24 11:52:13 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-08-24 12:07:35
+ */
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50rpx;
+  height: 60rpx;
+}
+
+.icon {
+  width: 24rpx;
+  height: 24rpx;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pre-page {
+  background-image: url("data:image/svg+xml,%3C?xml version='1.0' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg t='1535082518601' class='icon' style='' viewBox='0 0 1085 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='8980' xmlns:xlink='http://www.w3.org/1999/xlink' width='211.9140625' height='200'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E%3C/style%3E%3C/defs%3E%3Cpath d='M516.209994 1024L0 512.323846 516.209994 0l86.790639 87.43833-427.476281 424.885516 427.476281 424.237824-86.790639 87.43833z' fill='%23909090' p-id='8981'%3E%3C/path%3E%3Cpath d='M998.092347 1024l-515.562303-511.676154L998.092347 0l87.43833 87.43833-428.123972 424.885516 428.123972 424.237824-87.43833 87.43833z' fill='%23909090' p-id='8982'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.next-page {
+  background-image: url("data:image/svg+xml,%3C?xml version='1.0' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg t='1535082480117' class='icon' style='' viewBox='0 0 1085 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='8867' xmlns:xlink='http://www.w3.org/1999/xlink' width='211.9140625' height='200'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E%3C/style%3E%3C/defs%3E%3Cpath d='M507.790006 0L1024 511.676154 507.790006 1024l-86.790639-87.43833 427.476281-424.885516-427.476281-424.237824 86.790639-87.43833z' fill='%23909090' p-id='8868'%3E%3C/path%3E%3Cpath d='M25.907653 0l515.562303 511.676154L25.907653 1024l-87.43833-87.43833001 428.123972-424.88551599-428.123972-424.23782399 87.43833-87.43833001z' fill='%23909090' p-id='8869'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.pre-page-disable {
+  background-image: url("data:image/svg+xml,%3C?xml version='1.0' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg t='1535082537910' class='icon' style='' viewBox='0 0 1032 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9093' xmlns:xlink='http://www.w3.org/1999/xlink' width='201.5625' height='200'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E%3C/style%3E%3C/defs%3E%3Cpath d='M9.2874 533.603336a62.478872 62.478872 0 0 1 12.664636-72.61058L484.63341 16.886182a63.323181 63.323181 0 0 1 84.430908 92.029689L153.664252 506.585446l415.400066 400.202502a63.323181 63.323181 0 1 1-84.430908 91.18538L21.107727 551.333827a59.101635 59.101635 0 0 1-11.820327-17.730491z m422.154538 0a62.478872 62.478872 0 0 1 12.664636-72.61058L906.787948 16.886182a63.323181 63.323181 0 0 1 84.430908 92.029689L575.81879 506.585446l415.400066 400.202502a63.323181 63.323181 0 1 1-84.430908 91.18538L443.262265 551.333827a59.101635 59.101635 0 0 1-11.820327-17.730491z' fill='%23cdcdcd' p-id='9094'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.next-page-disable {
+  background-image: url("data:image/svg+xml,%3C?xml version='1.0' standalone='no'?%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg t='1535082581398' class='icon' style='' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='9431' xmlns:xlink='http://www.w3.org/1999/xlink' width='200' height='200'%3E%3Cdefs%3E%3Cstyle type='text/css'%3E%3C/style%3E%3C/defs%3E%3Cpath d='M587.946667 539.306667a59.733333 59.733333 0 0 1-7.68 12.8l-470.186667 453.973333a64 64 0 0 1-85.333333-92.16L442.026667 512 19.626667 110.08A64 64 0 0 1 107.52 17.066667l470.186667 444.586666a63.146667 63.146667 0 0 1 12.8 73.386667z m426.666666 0a59.733333 59.733333 0 0 1-7.68 12.8l-470.186666 453.973333a64 64 0 0 1-85.333334-92.16L868.693333 512 446.293333 110.08A64 64 0 0 1 534.186667 17.066667l470.186666 444.586666a63.146667 63.146667 0 0 1 12.8 73.386667z' fill='%23cdcdcd' p-id='9432'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.pre-btn {
+  position: absolute;
+  top: 0;
+  left: 33rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.next-btn {
+  position: absolute;
+  top: 0;
+  right: 33rpx;
+  width: 60rpx;
+  height: 60rpx;
+}

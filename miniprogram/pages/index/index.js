@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-23 17:51:00
+ * @Last Modified time: 2018-08-24 15:52:55
  */
 import { EpisodeModel } from '../../models/episode'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -17,7 +17,9 @@ Page({
   data: {
     episodeData: null,
     status: DEFAULT,
-    errMsg: '不妙，出错了'
+    errMsg: '不妙，出错了',
+    isFirst: false,
+    isLatest: true,
   },
 
   /**
@@ -73,7 +75,17 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    return {
+      // title: this.data.episodeData.title
+    }
+  },
   
+  handlePrev: function () {
+    this._updateepisodeData('prev')
+  },
+
+  handleNext: function () {
+    this._updateepisodeData('next')
   },
 
   _fetchData: function () {
@@ -81,9 +93,9 @@ Page({
       episodeModel.getLatest(res => {
         this.setData({
           episodeData: res[0],
-          status: SUCCESS
+          status: SUCCESS,
+          isFirst: res.index === 1 ? true : false
         })
-        console.log(this.data)
       })
     } catch(err) {
       this.setData({
@@ -93,5 +105,21 @@ Page({
     this.setData({
       status: PENDING
     })
+  },
+
+  _updateepisodeData: function (nextOrPrev) {
+    const { index } = this.data.episodeData
+    episodeModel.getEpisode(index, nextOrPrev, res => {
+      this.setData({
+        episodeData: res[0],
+        status: SUCCESS,
+        isFirst: episodeModel.isFirst(res[0].index),
+        isLatest: episodeModel.isLatest(res[0].index)
+      })
+    })
+    this.setData({
+      status: PENDING
+    })
   }
+
 })
