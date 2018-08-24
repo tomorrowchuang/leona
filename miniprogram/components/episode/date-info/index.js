@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-23 16:58:43 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-23 18:12:07
+ * @Last Modified time: 2018-08-24 18:22:29
  */
 import { months } from '../../../const/const.js'
 
@@ -30,7 +30,6 @@ Component({
       year,
       month: months[month]
     })
-    console.log(this.data)
   },
 
   /**

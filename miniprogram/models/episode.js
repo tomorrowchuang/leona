@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-22 22:36:56 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-24 15:34:26
+ * @Last Modified time: 2018-08-24 18:28:46
  */
 
 import { WXCloud } from '../utils/wx-cloud.js'
@@ -13,8 +13,10 @@ export class EpisodeModel extends WXCloud {
       collection: 'episode',
       limit: 1,
       success: res => {
-        this._setLatestIndex(res.index)
-        callback(res)
+        let result = res[0]
+        this._setLatestIndex(result.index)
+        wx.setStorageSync(this._getKey(result.index), result)
+        callback(result)
       }
     })
   }
@@ -29,17 +31,23 @@ export class EpisodeModel extends WXCloud {
 
   getEpisode(index, nextOrPrev, callback) {
     let searchIndex = nextOrPrev === 'next' ? index - 1 : index + 1
-    this.getData({
-      collection: 'episode',
-      limit: 1,
-      query: {
-        index: searchIndex
-      },
-      success: res => {
-        this._setLatestIndex(res.index)
-        callback(res)
-      }
-    })
+    let saveEpisode = wx.getStorageSync(this._getKey(searchIndex))
+    if (!saveEpisode) {
+      this.getData({
+        collection: 'episode',
+        limit: 1,
+        query: {
+          index: searchIndex
+        },
+        success: res => {
+          let result = res[0]
+          wx.setStorageSync(this._getKey(result.index), result)
+          callback(result)
+        }
+      })
+    } else {
+      callback(saveEpisode)
+    }
   }
 
   /**
@@ -62,6 +70,11 @@ export class EpisodeModel extends WXCloud {
     } catch (err) {
       console.log(err)
     }
+  }
+
+  _getKey(index) {
+    let key = 'sengoku-' + index
+    return key
   }
 
 }
