@@ -9,6 +9,12 @@
       <button plain open-type='share' class='share-icon-tap-area' />
     </view>
     <episode-content content='{{ episodeData }}' />
-    <nav class='nav-container' />
+    <nav
+      class='nav-container'
+      isFirst='{{ isFirst }}'
+      isLatest='{{ isLatest }}'
+      bind:pre='handlePrev'
+      bind:next='handleNext'
+    />
   </block>
 </view>
