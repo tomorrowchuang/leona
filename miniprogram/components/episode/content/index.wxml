@@ -1,12 +1,11 @@
 <!--components/episode/content/index.wxml-->
 <view class='container' >
   <view class='img-container' >
-    <image class='show-img' src='{{ content.image }}' />
+    <image class='show-img' src='{{ content.image }}' mode="aspectFill" />
     <view class='tag-white' >セリフ。</view>
   </view>
   <view class='tag' >セリフ。</view>
   <view class="serifu-container" >
     <view class='text' >{{ content.content }}<text class='name' >-- {{ name }}</text></view>
-    
   </view>
 </view>
