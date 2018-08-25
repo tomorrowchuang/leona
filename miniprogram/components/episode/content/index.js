@@ -2,13 +2,17 @@
  * @Author: Lac 
  * @Date: 2018-08-23 18:14:15 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-23 19:22:08
+ * @Last Modified time: 2018-08-26 01:02:32
  */
+
+import { episodeBeh } from '../beh.js'
 
 Component({
   /**
    * 组件的属性列表
    */
+  behaviors: [ episodeBeh ],
+
   properties: {
     content: Object
   },
@@ -18,14 +22,6 @@ Component({
    */
   data: {
     name: ''
-  },
-
-  attached: function () {
-      let { content } = this.properties
-      let name = '「' + content.title + '」'
-      this.setData({
-        name: name
-      })
   },
 
   /**
