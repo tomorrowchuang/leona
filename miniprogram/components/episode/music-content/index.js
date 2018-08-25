@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-26 00:58:53 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-26 01:29:05
+ * @Last Modified time: 2018-08-26 01:47:47
  */
 
  import { episodeBeh } from '../beh.js'
@@ -42,6 +42,7 @@ Component({
       const { content, playing } = this.data
       if (!playing) {
         mMgr.src = content.url
+        mMgr.title = content.title
       } else {
         mMgr.pause()
       }
