@@ -23,6 +23,7 @@
 .music-cover {
   width: 440rpx;
   height: 440rpx;
+  border-radius: 50%;
 }
 
 .cover-wrapper .icon {
