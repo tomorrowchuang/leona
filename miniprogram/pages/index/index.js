@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-25 23:53:05
+ * @Last Modified time: 2018-08-26 01:50:18
  */
 import { EpisodeModel } from '../../models/episode'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -114,7 +114,6 @@ Page({
     })
     wx.nextTick(() => {
       episodeModel.getEpisode(index, nextOrPrev, res => {
-        console.log(res)
         this.setData({
           episodeData: res,
           status: SUCCESS,
