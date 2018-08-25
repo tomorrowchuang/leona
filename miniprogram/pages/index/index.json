@@ -4,6 +4,7 @@
     "skeleton": "/components/skeleton/index",
     "date-info": "/components/episode/date-info/index",
     "episode-content": "/components/episode/content/index",
+    "episode-music-content": "/components/episode/music-content/index",
     "nav": "/components/nav/index"
   },
   "disableScroll": true
