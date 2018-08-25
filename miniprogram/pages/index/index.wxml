@@ -8,7 +8,8 @@
       <view class="share-icon" />
       <button plain open-type='share' class='share-icon-tap-area' />
     </view>
-    <episode-content content='{{ episodeData }}' />
+    <episode-content content='{{ episodeData }}' wx:if='{{ episodeData.type !== 500 }}' />
+    <episode-music-content content='{{ episodeData }}' wx:if='{{ episodeData.type === 500 }}' />
     <nav
       class='nav-container'
       isFirst='{{ isFirst }}'

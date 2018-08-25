@@ -9,5 +9,10 @@
 
 ### Pic
 
-![](./demo-pics/index-pic.jpg)
+- 映画・ドラマ・アニメ・漫画
 
+![](./demo-pics/index-pic01.jpg)
+
+- 音楽
+
+![](./demo-pics/index-pic02.jpg)

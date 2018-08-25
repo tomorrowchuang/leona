@@ -1,0 +1,92 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-08-26 00:46:10 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-08-26 01:15:17
+ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.cover-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin-top: 60rpx;
+  width: 440rpx;
+  height: 440rpx;
+  border-radius: 50%;
+}
+
+.music-cover {
+  width: 440rpx;
+  height: 440rpx;
+}
+
+.cover-wrapper .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.tag {
+  position: relative;
+  top: -70rpx;
+  left: 40rpx;
+  align-self: flex-start;
+  writing-mode: vertical-rl;
+  font-size: 51rpx;
+  font-weight: 200;
+  color: #353535;
+  z-index: -1;
+}
+
+.music-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.music-container .text {
+  position: relative;
+  max-width: 550rpx;
+  min-width: 300rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #353535;
+}
+.music-container .text .name {
+  position: absolute;
+  bottom: -60rpx;
+  right: -50rpx;
+  font-size: 26rpx;
+  color: #353535;
+}
+
+/**
+* 相册封面转动
+*/
+.rotation-cover {
+  animation: rotation 12s linear infinite;
+  -moz-animation: rotation 12s linear infinite;
+  -webkit-animation: rotation 12s linear infinite;
+  -o-animation: rotation 12s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
