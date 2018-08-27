@@ -3,10 +3,15 @@
     <skeleton cover='{{ false }}' />
   </block>
   <block wx:if='{{ status === "SUCCESS" && episodeData }}'>
-    <view class="header" >
+    <view class='header' >
       <date-info ep='{{ episodeData.index }}' />
-      <view class="share-icon" />
-      <button plain open-type='share' class='share-icon-tap-area' />
+      <view class='header-icon-warpper' >
+        <block wx:if='{{ episodeData.album }}'>
+          <view class='album-icon' />
+        </block>
+        <view class='share-icon' />
+        <button plain open-type='share' class='share-icon-tap-area' />
+      </view>
     </view>
     <episode-content content='{{ episodeData }}' wx:if='{{ episodeData.type !== 500 }}' />
     <episode-sp-content content='{{ episodeData }}' wx:if='{{ episodeData.type === 500 }}' />
