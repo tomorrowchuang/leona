@@ -7,7 +7,7 @@
       <date-info ep='{{ episodeData.index }}' />
       <view class='header-icon-warpper' >
         <block wx:if='{{ episodeData.album }}'>
-          <view class='album-icon' />
+          <view class='album-icon' bind:tap='jumpToPhotoList' />
         </block>
         <view class='share-icon' />
         <button plain open-type='share' class='share-icon-tap-area' />

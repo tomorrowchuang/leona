@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-26 01:50:18
+ * @Last Modified time: 2018-08-27 22:36:41
  */
 import { EpisodeModel } from '../../models/episode'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -86,6 +86,13 @@ Page({
 
   handleNext: function () {
     this._updateepisodeData('next')
+  },
+
+  jumpToPhotoList: function () {
+    const { index } = this.data.episodeData
+    wx.navigateTo({
+      url: `/pages/photos/index?index=${ index }`
+    })
   },
 
   _fetchData: function () {
