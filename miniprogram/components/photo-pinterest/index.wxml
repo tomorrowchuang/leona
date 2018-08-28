@@ -16,9 +16,9 @@
     wx:for="{{ photos }}"
     wx:key="{{item.index}}"
     data-photos = "{{ previewPhotos }}"
-    data-currentPhoto = "{{ item.photo.large_url }}"
+    data-currentPhoto = "{{ item.url }}"
     style="left:{{ item.left }}; top:{{ item.top }}; position:{{ item.position }}; width:{{ helper.clacWidth(cols) }}; "
   >
-    <image src="{{ item.photo.small_url }}" mode="widthFix" ></image>
+    <image src="{{ item.url }}" mode="widthFix" ></image>
   </view>
 </view>

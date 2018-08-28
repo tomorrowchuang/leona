@@ -1,8 +1,8 @@
 /*
  * @Author: Lac 
  * @Date: 2018-08-20 15:09:37 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-08-20 15:09:37 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-08-28 23:29:59
  */
 
 Component({
@@ -43,7 +43,7 @@ Component({
       }
       let tempArr = []
       for (let i = 0; i < photos.length; i++) {
-        tempArr.push(photos[i].photo.large_url)
+        tempArr.push(photos[i].url)
       }
       this.setData({
         previewPhotos: tempArr

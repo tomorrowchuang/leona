@@ -2,8 +2,12 @@
  * @Author: Lac 
  * @Date: 2018-08-27 22:29:26 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-27 22:36:59
+ * @Last Modified time: 2018-08-28 23:27:49
  */
+import { PhotoModel } from '../../models/photos'
+import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
+
+let photoModel = new PhotoModel()
 
 Page({
 
@@ -11,14 +15,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    photos: [],
+    title: '',
+    status: DEFAULT,
+    heightArr: [],
+    errorMessage: 'Error',
+    cols: 2
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.index)
+    this._getData(options.index, options.title)
   },
 
   /**
@@ -68,5 +77,65 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 下拉回调
+   */
+  lower: function () {
+    console.log('do something~')
+  },
+
+  _getData: function (index, title) {
+    this.setData({
+      title,
+      status: PENDING
+    })
+    wx.nextTick(() => {
+      photoModel.getPhotos(index, res => {
+        this._handleData(res.photos, this.data.cols)
+          .then(res => {
+            this.setData({
+              photos: res.list,
+              heightArr: res.heightArr,
+              status: 'SUCCESS'
+            })
+          })
+          .catch(err => {
+            this.setData({
+              status: 'FAIL'
+            })
+          })
+      })
+    })
+  },
+
+  _handleData: function (data, cols = 2) {
+    return new Promise((resolve, reject) => {
+      let gap = 30
+      let imgWidth = (750 - gap * 2 - gap * (cols - 1)) / cols
+      let list = data
+      let heightArr = this.data.heightArr
+      for (let i in list) {
+        let boxHeight = list[i].h / list[i].w * imgWidth
+        if (i < cols && heightArr.length < cols) {
+          heightArr.push(boxHeight + gap)
+          list[i].position = 'absolute'
+          list[i].top = `0`
+          list[i].left = i == 0 ? i * imgWidth + 'rpx' : i * imgWidth + gap * i + 'rpx'
+        } else {
+          let minBoxHeight = Math.min.apply(null, heightArr);
+          let minBoxIndex = heightArr.indexOf(minBoxHeight)
+          list[i].position = 'absolute'
+          list[i].top = `${minBoxHeight}rpx`
+          list[i].left = minBoxIndex == 0 ? minBoxIndex * imgWidth + 'rpx' : minBoxIndex * imgWidth + gap * minBoxIndex + 'rpx'
+          heightArr[minBoxIndex] += (boxHeight + gap)
+        }
+      }
+      resolve({
+        list,
+        heightArr
+      })
+    })
   }
 })
