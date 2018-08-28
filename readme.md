@@ -16,3 +16,9 @@
 - 音楽
 
 ![](./demo-pics/index-pic02.jpg)
+
+- 画像
+
+![](./demo-pics/index-pic03.jpg)
+
+![](./demo-pics/index-pic04.jpg)
