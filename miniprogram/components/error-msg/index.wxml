@@ -1,0 +1,4 @@
+<view class='error-message'>
+  <view class='error-icon' ></view>
+  <view class='error-text' >{{ errMsg }}</view>
+</view>

@@ -2,11 +2,12 @@
  * @Author: Lac 
  * @Date: 2018-08-27 22:29:26 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-30 11:31:01
+ * @Last Modified time: 2018-08-30 11:43:54
  */
 
 import { PhotoModel } from '../../models/photos'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
+import { errorMsg } from '../../const/const'
 
 let photoModel = new PhotoModel()
 
@@ -20,7 +21,7 @@ Page({
     title: '',
     status: DEFAULT,
     heightArr: [],
-    errorMessage: 'Error',
+    errorMsg: errorMsg,
     cols: 2
   },
 

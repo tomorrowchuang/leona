@@ -2,9 +2,10 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-28 23:00:31
+ * @Last Modified time: 2018-08-30 11:44:11
  */
 import { EpisodeModel } from '../../models/episode'
+import { errorMsg } from '../../const/const'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
 
 let episodeModel = new EpisodeModel()
@@ -17,7 +18,7 @@ Page({
   data: {
     episodeData: null,
     status: DEFAULT,
-    errMsg: '不妙，出错了',
+    errMsg: errorMsg,
     isFirst: false,
     isLatest: true,
   },

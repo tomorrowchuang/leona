@@ -7,21 +7,16 @@
     bindscrolltolower="lower"
   >
     <view class="title" >{{ title }}</view>
-
     <block wx:if="{{ status === 'PENDING' || status === 'DEFAULT' }}" >
       <view class="skeleton">
         <skeleton cover="{{ false }}"></skeleton>
       </view>
     </block>
-
     <block wx:if='{{ status == "SUCCESS" }}'>
       <photo-pinterest photos="{{ photos }}" cols="{{ cols }}" />
     </block>
-
-    <block wx:if='{{ status == "FAIL" }}'>
-      <view class='error-message'>
-        {{ errorMessage }}
-      </view>
+    <block wx:if='{{ status === "FAIL" }}' >
+      <error-msg errMsg='{{ errMsg }}' />
     </block>
   </scroll-view>
 </view>

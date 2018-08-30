@@ -2,6 +2,7 @@
   "navigationBarTitleText": "",
   "usingComponents": {
     "skeleton": "/components/skeleton/index",
-    "photo-pinterest": "/components/photo-pinterest/index"
+    "photo-pinterest": "/components/photo-pinterest/index",
+    "error-msg": "/components/error-msg/index"
   }
 }

@@ -23,4 +23,7 @@
       bind:next='handleNext'
     />
   </block>
+  <block wx:if='{{ status === "FAIL" }}' >
+    <error-msg errMsg='{{ errMsg }}' />
+  </block>
 </view>
