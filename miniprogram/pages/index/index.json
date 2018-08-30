@@ -5,7 +5,8 @@
     "date-info": "/components/episode/date-info/index",
     "episode-content": "/components/episode/content/index",
     "episode-sp-content": "/components/episode/sp-content/index",
-    "nav": "/components/nav/index"
+    "nav": "/components/nav/index",
+    "error-msg": "/components/error-msg/index"
   },
   "disableScroll": true
 }

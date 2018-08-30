@@ -2,10 +2,12 @@
  * @Author: Lac 
  * @Date: 2018-08-27 22:29:26 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-28 23:27:49
+ * @Last Modified time: 2018-08-30 11:43:54
  */
+
 import { PhotoModel } from '../../models/photos'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
+import { errorMsg } from '../../const/const'
 
 let photoModel = new PhotoModel()
 
@@ -19,7 +21,7 @@ Page({
     title: '',
     status: DEFAULT,
     heightArr: [],
-    errorMessage: 'Error',
+    errorMsg: errorMsg,
     cols: 2
   },
 
@@ -98,12 +100,12 @@ Page({
             this.setData({
               photos: res.list,
               heightArr: res.heightArr,
-              status: 'SUCCESS'
+              status: SUCCESS
             })
           })
           .catch(err => {
             this.setData({
-              status: 'FAIL'
+              status: FAIL
             })
           })
       })
