@@ -16,7 +16,7 @@
       <photo-pinterest photos="{{ photos }}" cols="{{ cols }}" />
     </block>
     <block wx:if='{{ status === "FAIL" }}' >
-      <error-msg errMsg='{{ errMsg }}' />
+      <error-msg errMsg='{{ errorMsg }}' />
     </block>
   </scroll-view>
 </view>

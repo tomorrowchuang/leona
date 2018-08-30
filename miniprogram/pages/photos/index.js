@@ -2,12 +2,13 @@
  * @Author: Lac 
  * @Date: 2018-08-27 22:29:26 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-30 11:43:54
+ * @Last Modified time: 2018-08-30 12:33:37
  */
 
 import { PhotoModel } from '../../models/photos'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
 import { errorMsg } from '../../const/const'
+import handlePhotosData from '../../utils/handle-photos-data'
 
 let photoModel = new PhotoModel()
 
@@ -95,7 +96,7 @@ Page({
     })
     wx.nextTick(() => {
       photoModel.getPhotos(index, res => {
-        this._handleData(res.photos, this.data.cols)
+        handlePhotosData(res.photos, this.data.cols, this.data.heightArr)
           .then(res => {
             this.setData({
               photos: res.list,
@@ -108,35 +109,6 @@ Page({
               status: FAIL
             })
           })
-      })
-    })
-  },
-
-  _handleData: function (data, cols = 2) {
-    return new Promise((resolve, reject) => {
-      let gap = 30
-      let imgWidth = (750 - gap * 2 - gap * (cols - 1)) / cols
-      let list = data
-      let heightArr = this.data.heightArr
-      for (let i in list) {
-        let boxHeight = list[i].h / list[i].w * imgWidth
-        if (i < cols && heightArr.length < cols) {
-          heightArr.push(boxHeight + gap)
-          list[i].position = 'absolute'
-          list[i].top = `0`
-          list[i].left = i == 0 ? i * imgWidth + 'rpx' : i * imgWidth + gap * i + 'rpx'
-        } else {
-          let minBoxHeight = Math.min.apply(null, heightArr);
-          let minBoxIndex = heightArr.indexOf(minBoxHeight)
-          list[i].position = 'absolute'
-          list[i].top = `${minBoxHeight}rpx`
-          list[i].left = minBoxIndex == 0 ? minBoxIndex * imgWidth + 'rpx' : minBoxIndex * imgWidth + gap * minBoxIndex + 'rpx'
-          heightArr[minBoxIndex] += (boxHeight + gap)
-        }
-      }
-      resolve({
-        list,
-        heightArr
       })
     })
   }
