@@ -1,3 +1,10 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-08-30 15:31:25 
+ * @Last Modified by:   Lac 
+ * @Last Modified time: 2018-08-30 15:31:25 
+ */
+
 /**
  * merge page
  * object/array/string/number直接覆盖; function, 按照传入的顺序依次执行
