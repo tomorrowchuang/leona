@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-30 15:33:10 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-30 15:34:36
+ * @Last Modified time: 2018-08-30 15:52:48
  */
 
 export class NavBarTitleToggle {

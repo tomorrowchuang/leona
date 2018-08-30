@@ -2,17 +2,19 @@
  * @Author: Lac 
  * @Date: 2018-08-27 22:29:26 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-30 12:33:37
+ * @Last Modified time: 2018-08-30 15:50:51
  */
 
 import { PhotoModel } from '../../models/photos'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
 import { errorMsg } from '../../const/const'
 import handlePhotosData from '../../utils/handle-photos-data'
+import navToggleMixin from '../../utils/nav-toggle-mixin'
+import mergePage from '../../utils/merge-page'
 
 let photoModel = new PhotoModel()
 
-Page({
+Page(mergePage(navToggleMixin(['', '画像']) ,{
 
   /**
    * 页面的初始数据
@@ -82,13 +84,6 @@ Page({
 
   },
 
-  /**
-   * 下拉回调
-   */
-  lower: function () {
-    console.log('do something~')
-  },
-
   _getData: function (index, title) {
     this.setData({
       title,
@@ -112,4 +107,4 @@ Page({
       })
     })
   }
-})
+}))
