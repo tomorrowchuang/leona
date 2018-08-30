@@ -1,22 +1,14 @@
-<view class="container" >
-  <scroll-view
-    scroll-y
-    scroll-with-animation
-    style="height: 100vh;"
-    lower-threshold="500"
-    bindscrolltolower="lower"
-  >
-    <view class="title" >{{ title }}</view>
-    <block wx:if="{{ status === 'PENDING' || status === 'DEFAULT' }}" >
-      <view class="skeleton">
-        <skeleton cover="{{ false }}"></skeleton>
-      </view>
-    </block>
-    <block wx:if='{{ status == "SUCCESS" }}'>
-      <photo-pinterest photos="{{ photos }}" cols="{{ cols }}" />
-    </block>
-    <block wx:if='{{ status === "FAIL" }}' >
-      <error-msg errMsg='{{ errMsg }}' />
-    </block>
-  </scroll-view>
+<view class='container' >
+  <view class='title' id='page-title' >{{ title }}</view>
+  <block wx:if='{{ status === "PENDING" || status === "DEFAULT" }}' >
+    <view class="skeleton">
+      <skeleton cover="{{ false }}"></skeleton>
+    </view>
+  </block>
+  <block wx:if='{{ status == "SUCCESS" }}'>
+    <photo-pinterest photos='{{ photos }}' cols='{{ cols }}' />
+  </block>
+  <block wx:if='{{ status === "FAIL" }}' >
+    <error-msg errMsg='{{ errorMsg }}' />
+  </block>
 </view>
