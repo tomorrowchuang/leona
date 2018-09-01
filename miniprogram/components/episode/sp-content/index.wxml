@@ -13,6 +13,10 @@
   </view>
   <view class='tag' >音楽。</view>
   <view class="music-container" >
-    <view class='text' >{{ content.content }}<text class='name' >-- {{ name }}</text></view>
+    <view
+      class='text'
+      data-content='{{ content.content }}'
+      bind:longpress='handleLongPress'
+    >{{ content.content }}<text class='name' >-- {{ name }}</text></view>
   </view>
 </view>
