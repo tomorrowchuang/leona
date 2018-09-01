@@ -4,7 +4,7 @@
   </block>
   <block wx:if='{{ status === "SUCCESS" && episodeData }}'>
     <view class='header' >
-      <date-info ep='{{ episodeData.index }}' />
+      <date-info ep='{{ episodeData.index }}' pubdate='{{ episodeData.pubdate }}' />
       <view class='header-icon-warpper' >
         <block wx:if='{{ episodeData.album }}'>
           <view class='album-icon' bind:tap='jumpToPhotoList' />
