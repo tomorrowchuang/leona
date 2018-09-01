@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-23 18:14:15 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-26 01:02:32
+ * @Last Modified time: 2018-09-01 23:58:42
  */
 
 import { episodeBeh } from '../beh.js'
@@ -28,6 +28,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    
   }
 })

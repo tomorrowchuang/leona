@@ -6,6 +6,10 @@
   </view>
   <view class='tag' >セリフ。</view>
   <view class="serifu-container" >
-    <view class='text' >{{ content.content }}<text class='name' >-- {{ name }}</text></view>
+    <view
+      class='text'
+      data-content='{{ content.content }}'
+      bind:longpress='handleLongPress'
+    >{{ content.content }}<text class='name' >-- {{ name }}</text></view>
   </view>
 </view>

@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-23 16:58:43 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-24 18:22:29
+ * @Last Modified time: 2018-09-02 00:44:27
  */
 import { months } from '../../../const/const.js'
 
@@ -11,7 +11,8 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    ep: String
+    ep: String,
+    pubdate: String
   },
 
   /**
@@ -23,11 +24,11 @@ Component({
   },
 
   attached: function () {
-    const date = new Date()
-    const year = date.getFullYear()
-    const month = date.getMonth()
+    const { pubdate } = this.properties
+    let data = pubdate.split('-')
+    let month = data[1].replace(/0/gi,"") - 1
     this.setData({
-      year,
+      year: data[0],
       month: months[month]
     })
   },

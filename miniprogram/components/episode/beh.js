@@ -7,5 +7,13 @@ export const episodeBeh = Behavior({
     this.setData({
       name
     })
+  },
+  methods: {
+    handleLongPress: function(ev) {
+      const { content } = ev.currentTarget.dataset
+      wx.setClipboardData({
+        data: content
+      })
+    }
   }
 })
