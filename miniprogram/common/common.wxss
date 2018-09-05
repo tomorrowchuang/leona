@@ -1,0 +1,26 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-09-05 22:24:13 
+ * @Last Modified by:   Lac 
+ * @Last Modified time: 2018-09-05 22:24:13 
+ */
+
+.container {
+  padding: 30rpx 0;
+}
+
+.container .title {
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+  font-size: 46rpx;
+}
+
+.container .error-message {
+  font-size: 30rpx;
+  color: red;
+}
+
+.container .skeleton {
+  padding: 30rpx;
+  margin-top: 20px;
+}
