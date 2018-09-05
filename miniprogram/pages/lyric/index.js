@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-09-05 16:48:52 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-05 22:11:19
+ * @Last Modified time: 2018-09-05 23:00:36
  */
 import { SongModel } from '../../models/song'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -20,6 +20,7 @@ Page(mergePage(navToggleMixin(['', '歌詞']) ,{
   data: {
     content: '',
     title: '',
+    singer: '',
     status: DEFAULT,
     errorMsg: errorMsg
   },
@@ -86,9 +87,21 @@ Page(mergePage(navToggleMixin(['', '歌詞']) ,{
       status: PENDING
     })
     wx.nextTick(() => {
-      songModel.getLyric(index, res => {
-        console.log(res)
-      })
+      try {
+        songModel.getLyric(index, res => {
+          console.log(res.content)
+         this.setData({
+          content: res.content,
+          title: res.title,
+          singer: res.singer,
+          status: SUCCESS,
+         })
+        })
+      } catch(err) {
+        this.setData({
+          status: FAIL
+        })
+      }
     })
   }
 }))

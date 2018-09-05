@@ -2,8 +2,24 @@
  * @Author: Lac 
  * @Date: 2018-09-05 16:48:40 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-05 22:25:40
+ * @Last Modified time: 2018-09-05 23:03:50
  */
 /* miniprogram/pages/lyric/index.wxss */
 
-@import '../../common/common.wxss'
+@import '../../common/common.wxss';
+
+.lyric-content-wrapper {
+  padding: 0 30rpx 0;
+}
+
+.lyric-content-wrapper .lyric-content {
+  line-height: 34rpx;
+  font-size: 26rpx;
+  color: #353535;
+}
+
+.lyric-content-wrapper .lyric-singer {
+  margin-bottom:4rpx;
+  font-size:28rpx;
+  color: #353535;
+}
