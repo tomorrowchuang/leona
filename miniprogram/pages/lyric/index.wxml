@@ -1,0 +1,34 @@
+<wxs module='helper' >
+  var format = function(text) {
+    if (text) {
+      var reg = getRegExp('\\\\n', 'g')
+      return text.replace(reg, '\n')
+    } else {
+      return
+    }
+  }
+
+  module.exports = {
+    format: format
+  }
+</wxs>
+
+<view class='container' >
+  <view class='title' id='page-title' >{{ title }}</view>
+  <block wx:if='{{ status === "PENDING" || status === "DEFAULT" }}' >
+    <view class="skeleton">
+      <skeleton cover="{{ false }}"></skeleton>
+    </view>
+  </block>
+  <block wx:if='{{ status == "SUCCESS" }}'>
+    <view class='lyric-content-wrapper' >
+      <view wx:if='{{ !!singer }}' class='lyric-singer' >
+        - {{ singer }}
+      </view>
+      <text selectable class='lyric-content' >{{ helper.format(content) }}</text>
+    </view>
+  </block>
+  <block wx:if='{{ status === "FAIL" }}' >
+    <error-msg errMsg='{{ errorMsg }}' />
+  </block>
+</view>
