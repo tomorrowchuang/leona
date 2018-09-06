@@ -1,8 +1,8 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-30 15:31:25 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-08-30 15:31:25 
+ * @Author: Lac
+ * @Date: 2018-08-30 15:31:25
+ * @Last Modified by:   Lac
+ * @Last Modified time: 2018-08-30 15:31:25
  */
 
 /**
@@ -10,7 +10,7 @@
  * object/array/string/number直接覆盖; function, 按照传入的顺序依次执行
  */
 
-function merge() {
+function merge () {
   let confs = Array.from(arguments)
   let r = {}
   let callbacks = {}
@@ -48,12 +48,11 @@ function merge() {
 }
 
 // helper
-function isShouldCover(v) {
+function isShouldCover (v) {
   let type = typeof (v)
   let isObject = Object.prototype.toString.call(v) === '[object Object]'
   let isArray = Array.isArray(v)
   return type === 'string' || type === 'number' || isObject || isArray
 }
-
 
 export default merge

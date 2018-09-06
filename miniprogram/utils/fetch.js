@@ -1,11 +1,11 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-22 22:33:28 
+ * @Author: Lac
+ * @Date: 2018-08-22 22:33:28
  * @Last Modified by: Lac
  * @Last Modified time: 2018-08-22 22:59:38
  */
 
-function createDefaultConfig() {
+function createDefaultConfig () {
   return {
     url: '',
     method: 'GET',
@@ -17,7 +17,7 @@ function createDefaultConfig() {
   }
 }
 
-function Request(config) {
+function Request (config) {
   let _config = Object.assign({}, createDefaultConfig(), config)
 
   if (!_config.header) {
@@ -60,7 +60,7 @@ function Request(config) {
   })
 }
 
-function createRequest(method) {
+function createRequest (method) {
   return function (url, data, header, dataType) {
     return new Request({
       url,

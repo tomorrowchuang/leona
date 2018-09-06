@@ -1,14 +1,14 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-22 22:36:56 
+ * @Author: Lac
+ * @Date: 2018-08-22 22:36:56
  * @Last Modified by: Lac
  * @Last Modified time: 2018-09-06 10:41:44
  */
 
 import { WXCloud } from '../utils/wx-cloud.js'
- 
+
 export class EpisodeModel extends WXCloud {
-  getLatest(callback) {
+  getLatest (callback) {
     this.getData({
       collection: 'episode',
       limit: 1,
@@ -21,15 +21,15 @@ export class EpisodeModel extends WXCloud {
     })
   }
 
-  isLatest(index) {
-    return this._getLatestIndex() === index ? true : false
+  isLatest (index) {
+    return this._getLatestIndex() === index
   }
 
-  isFirst(index) {
-    return index === 1 ? true : false
+  isFirst (index) {
+    return index === 1
   }
 
-  getEpisode(index, nextOrPrev, callback) {
+  getEpisode (index, nextOrPrev, callback) {
     let searchIndex = nextOrPrev === 'next' ? index - 1 : index + 1
     let saveEpisode = wx.getStorageSync(this._getKey(searchIndex))
     if (!saveEpisode) {
@@ -50,7 +50,7 @@ export class EpisodeModel extends WXCloud {
     }
   }
 
-  getOneEpisode(index, callback) {
+  getOneEpisode (index, callback) {
     let searchIndex = Number(index)
     this.getData({
       collection: 'episode',
@@ -68,7 +68,7 @@ export class EpisodeModel extends WXCloud {
   /**
    * save lastest index
    */
-  _setLatestIndex(index) {
+  _setLatestIndex (index) {
     try {
       wx.setStorageSync('lastIndex', index)
     } catch (err) {
@@ -79,7 +79,7 @@ export class EpisodeModel extends WXCloud {
   /**
    * get lastest index
    */
-  _getLatestIndex() {
+  _getLatestIndex () {
     try {
       return wx.getStorageSync('lastIndex')
     } catch (err) {
@@ -87,9 +87,8 @@ export class EpisodeModel extends WXCloud {
     }
   }
 
-  _getKey(index) {
+  _getKey (index) {
     let key = 'sengoku-' + index
     return key
   }
-
 }
