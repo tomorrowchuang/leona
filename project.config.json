@@ -27,7 +27,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -46,6 +46,12 @@
 					"name": "lyric",
 					"pathName": "pages/lyric/index",
 					"query": "index=6"
+				},
+				{
+					"id": 3,
+					"name": "share_index",
+					"pathName": "pages/index/index",
+					"query": "index=5"
 				}
 			]
 		}

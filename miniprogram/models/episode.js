@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-22 22:36:56 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-25 23:54:53
+ * @Last Modified time: 2018-09-06 10:41:44
  */
 
 import { WXCloud } from '../utils/wx-cloud.js'
@@ -48,6 +48,21 @@ export class EpisodeModel extends WXCloud {
     } else {
       callback(saveEpisode)
     }
+  }
+
+  getOneEpisode(index, callback) {
+    let searchIndex = Number(index)
+    this.getData({
+      collection: 'episode',
+      query: {
+        index: searchIndex
+      },
+      success: res => {
+        let result = res[0]
+        wx.setStorageSync(this._getKey(result.index), result)
+        callback(result)
+      }
+    })
   }
 
   /**
