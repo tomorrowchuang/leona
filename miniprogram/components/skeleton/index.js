@@ -1,10 +1,9 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-22 23:00:48 
+ * @Author: Lac
+ * @Date: 2018-08-22 23:00:48
  * @Last Modified by: Lac
  * @Last Modified time: 2018-08-22 23:02:12
  */
-
 
 Component({
   properties: {
@@ -61,7 +60,7 @@ Component({
       value: 200
     }
   },
-  
+
   data: {
     tempCardList: [],
     strokeList: []
@@ -71,14 +70,14 @@ Component({
 
   },
 
-  attached() {
+  attached () {
     let { cardAmount, strokeAmount } = this.properties
 
-    let tempCardList =  [...Array(cardAmount).keys()]
-    let strokeList =  [...Array(strokeAmount).keys()]
+    let tempCardList = [...Array(cardAmount).keys()]
+    let strokeList = [...Array(strokeAmount).keys()]
     this.setData({
       tempCardList: tempCardList,
       strokeList: strokeList
     })
-  },
+  }
 })

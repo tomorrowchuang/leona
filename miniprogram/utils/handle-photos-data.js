@@ -1,8 +1,8 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-30 15:31:35 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-08-30 15:31:35 
+ * @Author: Lac
+ * @Date: 2018-08-30 15:31:35
+ * @Last Modified by:   Lac
+ * @Last Modified time: 2018-08-30 15:31:35
  */
 
 /**
@@ -25,7 +25,7 @@ export default (data, cols = 2, heightArr) => {
         list[i].top = `0`
         list[i].left = i == 0 ? i * imgWidth + 'rpx' : i * imgWidth + gap * i + 'rpx'
       } else {
-        let minBoxHeight = Math.min.apply(null, heightArr);
+        let minBoxHeight = Math.min.apply(null, heightArr)
         let minBoxIndex = heightArr.indexOf(minBoxHeight)
         list[i].position = 'absolute'
         list[i].top = `${minBoxHeight}rpx`

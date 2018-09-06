@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-27 22:29:26 
+ * @Author: Lac
+ * @Date: 2018-08-27 22:29:26
  * @Last Modified by: Lac
  * @Last Modified time: 2018-08-30 15:50:51
  */
@@ -14,7 +14,7 @@ import mergePage from '../../utils/merge-page'
 
 let photoModel = new PhotoModel()
 
-Page(mergePage(navToggleMixin(['', '画像']) ,{
+Page(mergePage(navToggleMixin(['', '画像']), {
 
   /**
    * 页面的初始数据

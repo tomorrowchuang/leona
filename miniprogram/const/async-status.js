@@ -1,8 +1,8 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-22 22:53:40 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-08-22 22:53:40 
+ * @Author: Lac
+ * @Date: 2018-08-22 22:53:40
+ * @Last Modified by:   Lac
+ * @Last Modified time: 2018-08-22 22:53:40
  */
 export const DEFAULT = 'DEFAULT'
 export const PENDING = 'PENDING'

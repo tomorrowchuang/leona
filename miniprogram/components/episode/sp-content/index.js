@@ -1,13 +1,13 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-26 00:58:53 
+ * @Author: Lac
+ * @Date: 2018-08-26 00:58:53
  * @Last Modified by: Lac
  * @Last Modified time: 2018-08-26 18:28:57
  */
 
- import { episodeBeh } from '../beh.js'
+import { episodeBeh } from '../beh.js'
 
- const mMgr = wx.getBackgroundAudioManager()
+const mMgr = wx.getBackgroundAudioManager()
 
 Component({
   /**
@@ -18,7 +18,7 @@ Component({
   properties: {
     content: Object
   },
-  
+
   /**
    * 组件的初始数据
    */
@@ -29,11 +29,11 @@ Component({
     playSrc: './images/play.png'
   },
 
-  attached: function() {
+  attached: function () {
     this._recoverStatus()
     this._monitorSwitch()
   },
-  
+
   methods: {
     playMusic: function (e) {
       const { content, playing } = this.data
@@ -48,7 +48,7 @@ Component({
       })
     },
 
-    _recoverStatus: function() {
+    _recoverStatus: function () {
       const { url } = this.properties.content
       if (mMgr.paused) {
         this.setData({
@@ -63,7 +63,7 @@ Component({
       }
     },
 
-    _monitorSwitch:function() {
+    _monitorSwitch: function () {
       mMgr.onPlay(() => {
         this._recoverStatus()
       })

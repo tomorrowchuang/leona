@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-30 15:31:56 
+ * @Author: Lac
+ * @Date: 2018-08-30 15:31:56
  * @Last Modified by: Lac
  * @Last Modified time: 2018-08-30 15:52:36
  */
@@ -26,7 +26,7 @@ export default (titles) => {
         }).exec()
       }
     },
-  
+
     onPageScroll: function (e) {
       let { scrollTop } = e
       let titleBottomBoundary = this.titleBottomBoundary
@@ -36,6 +36,6 @@ export default (titles) => {
       } else {
         this.navBarTitleToggle.toggle(0)
       }
-    } 
+    }
   }
 }

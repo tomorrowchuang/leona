@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-09-05 16:58:13 
+ * @Author: Lac
+ * @Date: 2018-09-05 16:58:13
  * @Last Modified by: Lac
  * @Last Modified time: 2018-09-05 22:45:18
  */
@@ -8,7 +8,7 @@
 import { WXCloud } from '../utils/wx-cloud.js'
 
 export class SongModel extends WXCloud {
-  getLyric(index, callback) {
+  getLyric (index, callback) {
     let searchIndex = Number(index)
     this.getData({
       collection: 'music',

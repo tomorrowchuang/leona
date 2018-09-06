@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-09-05 16:48:52 
+ * @Author: Lac
+ * @Date: 2018-09-05 16:48:52
  * @Last Modified by: Lac
  * @Last Modified time: 2018-09-05 23:00:36
  */
@@ -12,7 +12,7 @@ import mergePage from '../../utils/merge-page'
 
 let songModel = new SongModel()
 
-Page(mergePage(navToggleMixin(['', '歌詞']) ,{
+Page(mergePage(navToggleMixin(['', '歌詞']), {
 
   /**
    * 页面的初始数据
@@ -90,14 +90,14 @@ Page(mergePage(navToggleMixin(['', '歌詞']) ,{
       try {
         songModel.getLyric(index, res => {
           console.log(res.content)
-         this.setData({
-          content: res.content,
-          title: res.title,
-          singer: res.singer,
-          status: SUCCESS,
-         })
+          this.setData({
+            content: res.content,
+            title: res.title,
+            singer: res.singer,
+            status: SUCCESS
+          })
         })
-      } catch(err) {
+      } catch (err) {
         this.setData({
           status: FAIL
         })

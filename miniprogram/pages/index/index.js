@@ -1,6 +1,6 @@
 /*
- * @Author: Lac 
- * @Date: 2018-08-21 17:08:03 
+ * @Author: Lac
+ * @Date: 2018-08-21 17:08:03
  * @Last Modified by: Lac
  * @Last Modified time: 2018-09-06 10:53:51
  */
@@ -20,7 +20,7 @@ Page({
     status: DEFAULT,
     errMsg: errorMsg,
     isFirst: false,
-    isLatest: true,
+    isLatest: true
   },
 
   /**
@@ -38,42 +38,42 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
@@ -84,7 +84,7 @@ Page({
       path: `/pages/index/index?index=${this.data.episodeData.index}`
     }
   },
-  
+
   handlePrev: function () {
     this._updateepisodeData('prev')
   },
@@ -96,20 +96,20 @@ Page({
   jumpToPhotoList: function () {
     const { index, title } = this.data.episodeData
     wx.navigateTo({
-      url: `/pages/photos/index?index=${ index }&title=${ title }`
+      url: `/pages/photos/index?index=${index}&title=${title}`
     })
   },
 
   _fetchData: function () {
-    try{
+    try {
       episodeModel.getLatest(res => {
         this.setData({
           episodeData: res,
           status: SUCCESS,
-          isFirst: res.index === 1 ? true : false
+          isFirst: res.index === 1
         })
       })
-    } catch(err) {
+    } catch (err) {
       this.setData({
         status: FAIL
       })
@@ -120,7 +120,7 @@ Page({
   },
 
   _fetchOneEpisodeData: function (index) {
-    try{
+    try {
       episodeModel.getOneEpisode(index, res => {
         this.setData({
           episodeData: res,
@@ -129,7 +129,7 @@ Page({
           isLatest: episodeModel.isLatest(res.index)
         })
       })
-    } catch(err) {
+    } catch (err) {
       this.setData({
         status: FAIL
       })
