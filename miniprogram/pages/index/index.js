@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-21 17:08:03 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-30 11:44:11
+ * @Last Modified time: 2018-09-06 10:53:51
  */
 import { EpisodeModel } from '../../models/episode'
 import { errorMsg } from '../../const/const'
@@ -27,7 +27,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._fetchData()
+    if (!options.index) {
+      this._fetchData()
+    } else {
+      this._fetchOneEpisodeData(options.index)
+    }
   },
 
   /**
@@ -77,7 +81,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      // title: this.data.episodeData.title
+      path: `/pages/index/index?index=${this.data.episodeData.index}`
     }
   },
   
@@ -103,6 +107,26 @@ Page({
           episodeData: res,
           status: SUCCESS,
           isFirst: res.index === 1 ? true : false
+        })
+      })
+    } catch(err) {
+      this.setData({
+        status: FAIL
+      })
+    }
+    this.setData({
+      status: PENDING
+    })
+  },
+
+  _fetchOneEpisodeData: function (index) {
+    try{
+      episodeModel.getOneEpisode(index, res => {
+        this.setData({
+          episodeData: res,
+          status: SUCCESS,
+          isFirst: episodeModel.isFirst(res.index),
+          isLatest: episodeModel.isLatest(res.index)
         })
       })
     } catch(err) {
