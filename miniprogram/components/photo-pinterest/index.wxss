@@ -1,8 +1,8 @@
 /*
  * @Author: Lac 
  * @Date: 2018-08-20 15:09:46 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-08-20 15:09:46 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-09-07 15:56:15
  */
 
 .container {
@@ -17,4 +17,8 @@
 .container image {
   width: 100%;
   height: 100%;
+}
+
+.container image:last-child {
+  padding-bottom: 50rpx;
 }

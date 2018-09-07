@@ -11,7 +11,6 @@
 
 <view class="container" >
   <view class="pic"
-    lazy-load
     bind:tap="handleTap"
     wx:for="{{ photos }}"
     wx:key="{{item.index}}"
@@ -19,6 +18,6 @@
     data-currentPhoto = "{{ item.url }}"
     style="left:{{ item.left }}; top:{{ item.top }}; position:{{ item.position }}; width:{{ helper.clacWidth(cols) }}; "
   >
-    <image src="{{ item.url }}" mode="widthFix" ></image>
+    <image lazy-load src="{{ item.url }}" mode="widthFix" ></image>
   </view>
 </view>
