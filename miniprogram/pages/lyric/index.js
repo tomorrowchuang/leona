@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-09-05 16:48:52
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-05 23:00:36
+ * @Last Modified time: 2018-09-07 12:25:57
  */
 import { SongModel } from '../../models/song'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
@@ -89,7 +89,6 @@ Page(mergePage(navToggleMixin(['', '歌詞']), {
     wx.nextTick(() => {
       try {
         songModel.getLyric(index, res => {
-          console.log(res.content)
           this.setData({
             content: res.content,
             title: res.title,
