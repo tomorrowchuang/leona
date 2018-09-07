@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-08-26 00:58:53
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-26 18:28:57
+ * @Last Modified time: 2018-09-07 12:18:31
  */
 
 import { episodeBeh } from '../beh.js'
@@ -45,6 +45,13 @@ Component({
       }
       this.setData({
         playing: !playing
+      })
+    },
+
+    handleClickTitle: function () {
+      const { index } = this.data.content
+      wx.navigateTo({
+        url: `/pages/lyric/index?index=${index}`
       })
     },
 

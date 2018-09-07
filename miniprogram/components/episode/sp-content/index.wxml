@@ -17,6 +17,9 @@
       class='text'
       data-content='{{ content.content }}'
       bind:longpress='handleLongPress'
-    >{{ content.content }}<text class='name' >-- {{ name }}</text></view>
+    >
+      {{ content.content }}
+      <text class='name' bind:tap='handleClickTitle' >-- {{ name }}</text>
+    </view>
   </view>
 </view>
