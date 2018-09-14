@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/photos/index",
-    "pages/lyric/index"
+    "pages/lyric/index",
+    "pages/webview/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
