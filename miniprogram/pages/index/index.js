@@ -2,13 +2,15 @@
  * @Author: Lac
  * @Date: 2018-08-21 17:08:03
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-06 10:53:51
+ * @Last Modified time: 2018-09-17 22:18:22
  */
 import { EpisodeModel } from '../../models/episode'
 import { errorMsg } from '../../const/const'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
 
 let episodeModel = new EpisodeModel()
+
+let touchDot = 0
 
 Page({
 
@@ -45,7 +47,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
@@ -154,5 +155,24 @@ Page({
         })
       })
     })
+  },
+
+  handleTouchStart: function (ev) {
+    touchDot = ev.touches[0].pageX
+  },
+
+  handleTouchMove: function (ev) {
+    const { isFirst, isLatest } = this.data
+    let touchMove = ev.touches[0].pageX
+    if (touchMove - touchDot <= -50 && !isFirst) {
+      this._updateepisodeData('next')
+    }
+    if (touchMove - touchDot >= 50 && !isLatest) {
+      this._updateepisodeData('prev')
+    }
+  },
+
+  handleTouchEnd: function (ev) {
+    touchDot = 0
   }
 })
