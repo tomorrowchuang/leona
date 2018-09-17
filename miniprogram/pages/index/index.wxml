@@ -13,15 +13,22 @@
         <button plain open-type='share' class='share-icon-tap-area' />
       </view>
     </view>
-    <episode-content content='{{ episodeData }}' wx:if='{{ episodeData.type !== 500 }}' />
-    <episode-sp-content content='{{ episodeData }}' wx:if='{{ episodeData.type === 500 }}' />
-    <nav
-      class='nav-container'
-      isFirst='{{ isFirst }}'
-      isLatest='{{ isLatest }}'
-      bind:pre='handlePrev'
-      bind:next='handleNext'
-    />
+    <view
+      class='content-wrapper'
+      bindtouchstart='handleTouchStart'
+      bindtouchmove='handleTouchMove'
+      bindtouchend='handleTouchEnd'
+    >
+      <episode-content content='{{ episodeData }}' wx:if='{{ episodeData.type !== 500 }}' />
+      <episode-sp-content content='{{ episodeData }}' wx:if='{{ episodeData.type === 500 }}' />
+      <nav
+        class='nav-container'
+        isFirst='{{ isFirst }}'
+        isLatest='{{ isLatest }}'
+        bind:pre='handlePrev'
+        bind:next='handleNext'
+      />
+    </view>
   </block>
   <block wx:if='{{ status === "FAIL" }}' >
     <error-msg errMsg='{{ errMsg }}' />

@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-08-23 16:27:22 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-02 00:17:01
+ * @Last Modified time: 2018-09-17 18:45:39
  */
 
 .container {
@@ -26,6 +26,10 @@ skeleton {
   width: 100%;
   border-top: 1px solid #f5f5f5;
   border-bottom: 1px solid #f5f5f5;
+}
+
+.content-wrapper {
+  height: calc(100vh - 100rpx)
 }
 
 .header-icon-warpper {
