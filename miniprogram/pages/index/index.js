@@ -156,15 +156,15 @@ Page({
       })
     })
   },
-  
+
   handleTouchStart: function (ev) {
     touchDot = ev.touches[0].pageX
   },
 
   handleTouchMove: function (ev) {
-    const { isFirst, isLatest  } = this.data
+    const { isFirst, isLatest } = this.data
     let touchMove = ev.touches[0].pageX
-    if (touchMove - touchDot <= -50  && !isFirst) {
+    if (touchMove - touchDot <= -50 && !isFirst) {
       this._updateepisodeData('next')
     }
     if (touchMove - touchDot >= 50 && !isLatest) {
@@ -174,5 +174,5 @@ Page({
 
   handleTouchEnd: function (ev) {
     touchDot = 0
-  },
+  }
 })
