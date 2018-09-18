@@ -9,6 +9,7 @@
     <view class='container' >
       <movie-info data='{{ infoData }}'  />
       <movie-summary data='{{ infoData.summary }}' />
+      <movie-staff data='{{ infoData }}'  />
     </view>
   </block>
   <block wx:if='{{ status === "FAIL" }}' >
