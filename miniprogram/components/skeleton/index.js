@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-08-22 23:00:48
  * @Last Modified by: Lac
- * @Last Modified time: 2018-08-22 23:02:12
+ * @Last Modified time: 2018-09-18 18:56:22
  */
 
 Component({
@@ -16,7 +16,7 @@ Component({
     // 颜色
     color: {
       type: String,
-      value: '#dfdfdf'
+      value: '#F4F4F4'
     },
 
     // 背景颜色
@@ -54,11 +54,16 @@ Component({
       type: String,
       value: 'left'
     },
-    // 封面图尺寸 rpx
-    coverSize: {
+    // 封面图宽 rpx
+    coverWidth: {
       type: Number,
       value: 200
-    }
+    },
+    // 封面图高 rpx
+    coverHeight: {
+      type: Number,
+      value: 200
+    },
   },
 
   data: {
