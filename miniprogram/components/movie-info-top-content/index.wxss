@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-09-18 17:54:04 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-18 18:41:53
+ * @Last Modified time: 2018-09-18 18:48:57
  */
 
 .container {
@@ -11,10 +11,20 @@
   padding: 30rpx;
 }
 
+.cover-wrapper {
+  margin-right: 30rpx;
+  overflow: hidden;
+  width: 225rpx;
+  height: 315rpx;
+  border-radius: 8rpx;
+  background: #F4F4F4;
+}
+
 .cover {
   margin-right: 30rpx;
   width: 225rpx;
   height: 315rpx;
+  border-radius: 8rpx;
 }
 
 .movie-detail {

@@ -1,7 +1,7 @@
 <view class='container' >
   <block wx:if='{{ status === "PENDING" || status === "DEFAULT" }}' >
     <view class="skeleton">
-      <skeleton cardAmount='{{ 1 }}' ></skeleton>
+      <skeleton cardAmount='{{ 1 }}' coverWidth ='225' coverHeight='315'  ></skeleton>
       <skeleton cover='{{ false }}'></skeleton>
     </view>
   </block>

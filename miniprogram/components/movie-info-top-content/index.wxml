@@ -11,7 +11,9 @@
 </wxs>
 
 <view class='container' >
-  <image class='cover' src='{{ data.cover_url }}' mode='aspectFill' />
+  <view class='cover-wrapper' >
+    <image class='cover' src='{{ data.cover_url }}' mode='aspectFill' />
+  </view>
   <view class='movie-detail' >
     <view class='title' >{{ data.title }}</view>
     <view class='info-item' >{{ '上映日: ' + data.show_date }}</view>
