@@ -8,6 +8,7 @@
   <block wx:if='{{ status == "SUCCESS" }}'>
     <view class='container' >
       <top-content data='{{ infoData }}'  />
+      <summary data='{{ infoData.summary }}' />
     </view>
   </block>
   <block wx:if='{{ status === "FAIL" }}' >

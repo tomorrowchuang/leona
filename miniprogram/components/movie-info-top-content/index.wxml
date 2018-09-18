@@ -16,9 +16,9 @@
   </view>
   <view class='movie-detail' >
     <view class='title' >{{ data.title }}</view>
-    <view class='info-item' >{{ '上映日: ' + data.show_date }}</view>
     <view class='info-item' >製作国: 日本</view>
     <view class='info-item' >{{ '上映時間: ' + data.time + '分' }}</view>
     <view class='info-item' >{{ 'ジャンル: ' + helper.typeFormat(data.type) }}</view>
+    <view class='info-item' >{{ '上映日: ' + data.show_date }}</view>
   </view>
 </view>

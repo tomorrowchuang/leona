@@ -3,6 +3,7 @@
   "usingComponents": {
     "skeleton": "/components/skeleton/index",
     "error-msg": "/components/error-msg/index",
-    "top-content": "/components/movie-info-top-content/index"
+    "top-content": "/components/movie-info-top-content/index",
+    "summary": "/components/movie-summary/index"
   }
 }
