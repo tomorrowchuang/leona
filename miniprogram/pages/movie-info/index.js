@@ -2,7 +2,7 @@
  * @Author: Lac 
  * @Date: 2018-09-18 16:40:02 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-18 17:20:30
+ * @Last Modified time: 2018-09-18 18:22:16
  */
 
 import { MovieInfoModel } from '../../models/movie-info'
@@ -91,9 +91,6 @@ Page({
             status: SUCCESS,
             infoData: res
           })
-          if (!!res.title) {
-            this._setNavigationBarTitle(res.title)
-          }
         })
       } catch (err) {
         this.setData({
@@ -101,11 +98,5 @@ Page({
         })
       }
     })
-  },
-
-  _setNavigationBarTitle: function (title) {
-    wx.setNavigationBarTitle({
-      title: title
-    })
-  } 
+  }
 })

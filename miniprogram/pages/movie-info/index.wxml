@@ -1,5 +1,4 @@
 <view class='container' >
-  <view class='title' id='page-title' >{{ title }}</view>
   <block wx:if='{{ status === "PENDING" || status === "DEFAULT" }}' >
     <view class="skeleton">
       <skeleton cardAmount='{{ 1 }}' ></skeleton>
@@ -7,7 +6,9 @@
     </view>
   </block>
   <block wx:if='{{ status == "SUCCESS" }}'>
-
+    <view class='container' >
+      <top-content data='{{ infoData }}'  />
+    </view>
   </block>
   <block wx:if='{{ status === "FAIL" }}' >
     <error-msg errMsg='{{ errorMsg }}' />
