@@ -1,14 +1,14 @@
 <view class='container' >
   <block wx:if='{{ status === "PENDING" || status === "DEFAULT" }}' >
     <view class="skeleton">
-      <skeleton cardAmount='{{ 1 }}' coverWidth ='225' coverHeight='315'  ></skeleton>
+      <skeleton cardAmount='{{ 1 }}' coverWidth ='225' coverHeight='315' ></skeleton>
       <skeleton cover='{{ false }}'></skeleton>
     </view>
   </block>
   <block wx:if='{{ status == "SUCCESS" }}'>
     <view class='container' >
-      <top-content data='{{ infoData }}'  />
-      <summary data='{{ infoData.summary }}' />
+      <movie-info data='{{ infoData }}'  />
+      <movie-summary data='{{ infoData.summary }}' />
     </view>
   </block>
   <block wx:if='{{ status === "FAIL" }}' >
