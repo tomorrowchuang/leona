@@ -1,2 +1,15 @@
-<!--miniprogram/pages/movie-info/index.wxml-->
-<text>miniprogram/pages/movie-info/index.wxml</text>
+<view class='container' >
+  <view class='title' id='page-title' >{{ title }}</view>
+  <block wx:if='{{ status === "PENDING" || status === "DEFAULT" }}' >
+    <view class="skeleton">
+      <skeleton cardAmount='{{ 1 }}' ></skeleton>
+      <skeleton cover='{{ false }}'></skeleton>
+    </view>
+  </block>
+  <block wx:if='{{ status == "SUCCESS" }}'>
+
+  </block>
+  <block wx:if='{{ status === "FAIL" }}' >
+    <error-msg errMsg='{{ errorMsg }}' />
+  </block>
+</view>

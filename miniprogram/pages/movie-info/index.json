@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "情報",
   "usingComponents": {
     "skeleton": "/components/skeleton/index",
     "error-msg": "/components/error-msg/index"

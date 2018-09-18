@@ -54,9 +54,10 @@
 					"query": "index=5"
 				},
 				{
-					"id": -1,
+					"id": 4,
 					"name": "movie-info",
-					"pathName": "pages/movie-info/index"
+					"pathName": "pages/movie-info/index",
+					"query": "index=10"
 				}
 			]
 		}

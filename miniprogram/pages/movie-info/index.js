@@ -1,9 +1,15 @@
 /*
  * @Author: Lac 
  * @Date: 2018-09-18 16:40:02 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-09-18 16:40:02 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-09-18 17:20:30
  */
+
+import { MovieInfoModel } from '../../models/movie-info'
+import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
+import { errorMsg } from '../../const/const'
+
+let movieInfoModel = new MovieInfoModel()
 
 Page({
 
@@ -11,14 +17,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    infoData: null,
+    status: DEFAULT,
+    errorMsg: errorMsg
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const { index } = options
+    this._fetchData(index)
   },
 
   /**
@@ -68,5 +77,35 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  _fetchData: function (index) {
+    this.setData({
+      status: PENDING
+    })
+    wx.nextTick(() => {
+      try {
+        movieInfoModel.getMovieInfo(index, res => {
+          console.log(res)
+          this.setData({
+            status: SUCCESS,
+            infoData: res
+          })
+          if (!!res.title) {
+            this._setNavigationBarTitle(res.title)
+          }
+        })
+      } catch (err) {
+        this.setData({
+          status: FAIL
+        })
+      }
+    })
+  },
+
+  _setNavigationBarTitle: function (title) {
+    wx.setNavigationBarTitle({
+      title: title
+    })
+  } 
 })
