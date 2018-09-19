@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-08-21 17:08:03
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-17 22:18:22
+ * @Last Modified time: 2018-09-19 15:32:53
  */
 import { EpisodeModel } from '../../models/episode'
 import { errorMsg } from '../../const/const'
@@ -98,6 +98,13 @@ Page({
     const { index, title } = this.data.episodeData
     wx.navigateTo({
       url: `/pages/photos/index?index=${index}&title=${title}`
+    })
+  },
+
+  handleJumpToInfoPage: function () {
+    const { index } = this.data.episodeData
+    wx.navigateTo({
+      url: `/pages/movie-info/index?index=${index}`
     })
   },
 

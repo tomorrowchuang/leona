@@ -3,6 +3,13 @@
   <view class='img-container' >
     <image class='show-img' src='{{ content.image }}' mode="aspectFill" />
     <view class='tag-white' >セリフ。</view>
+    <view
+      wx:if='{{ content.more }}'
+      class='more-btn'
+      bind:tap='handleTap'
+    >
+      <view class='icon' ></view>
+    </view>
   </view>
   <view class='tag' >セリフ。</view>
   <view class="serifu-container" >
