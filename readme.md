@@ -26,5 +26,15 @@
 
 ![](./demo-pics/index-pic04.jpg)
 
+- 映画・ドラマ情報
+
+![](./demo-pics/index-pic05.jpg)
+
+![](./demo-pics/index-pic06.jpg)
+
+- 歌詞
+
+![](./demo-pics/index-pic07.jpg)
+
 ### License
 MIT

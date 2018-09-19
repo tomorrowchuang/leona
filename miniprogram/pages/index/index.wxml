@@ -19,7 +19,7 @@
       bindtouchmove='handleTouchMove'
       bindtouchend='handleTouchEnd'
     >
-      <episode-content content='{{ episodeData }}' wx:if='{{ episodeData.type !== 500 }}' />
+      <episode-content content='{{ episodeData }}' wx:if='{{ episodeData.type !== 500 }}' bind:more='handleJumpToInfoPage' />
       <episode-sp-content content='{{ episodeData }}' wx:if='{{ episodeData.type === 500 }}' />
       <nav
         class='nav-container'

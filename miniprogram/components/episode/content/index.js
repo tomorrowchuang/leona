@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-08-23 18:14:15
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-01 23:58:42
+ * @Last Modified time: 2018-09-19 15:27:49
  */
 
 import { episodeBeh } from '../beh.js'
@@ -28,6 +28,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    handleTap: function () {
+      this.triggerEvent('more', {})
+    }
   }
 })
