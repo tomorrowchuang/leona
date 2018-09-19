@@ -10,6 +10,9 @@
       <movie-info data='{{ infoData }}'  />
       <movie-summary data='{{ infoData.summary }}' />
       <movie-staff data='{{ infoData }}'  />
+      <block wx:if='{{ infoData.comments && infoData.comments.length !== 0 }}' >
+        <movie-comments data='{{ infoData.comments }}' />
+      </block>
     </view>
   </block>
   <block wx:if='{{ status === "FAIL" }}' >

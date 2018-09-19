@@ -5,6 +5,7 @@
     "error-msg": "/components/error-msg/index",
     "movie-info": "/components/movie-detail/movie-info/index",
     "movie-summary": "/components/movie-detail/movie-summary/index",
-    "movie-staff": "/components/movie-detail/movie-staff/index"
+    "movie-staff": "/components/movie-detail/movie-staff/index",
+    "movie-comments": "/components/movie-detail/movie-comments/index"
   }
 }
