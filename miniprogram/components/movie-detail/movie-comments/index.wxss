@@ -27,6 +27,10 @@
   border-radius: 8rpx;
 }
 
+.comments:last-child {
+  margin-bottom: 0;
+}
+
 .comments .from {
   padding-left: 10rpx;
   color: #B2B2B2;

@@ -19,3 +19,6 @@
     <error-msg errMsg='{{ errorMsg }}' />
   </block>
 </view>
+<view class='footer'>
+  --- 到底啦( ´◔ ‸◔') ---
+</view>

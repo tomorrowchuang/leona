@@ -63,7 +63,7 @@ Component({
     coverHeight: {
       type: Number,
       value: 200
-    },
+    }
   },
 
   data: {

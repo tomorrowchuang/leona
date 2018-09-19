@@ -1,8 +1,8 @@
 /*
- * @Author: Lac 
- * @Date: 2018-09-18 17:53:55 
- * @Last Modified by:   Lac 
- * @Last Modified time: 2018-09-18 17:53:55 
+ * @Author: Lac
+ * @Date: 2018-09-18 17:53:55
+ * @Last Modified by:   Lac
+ * @Last Modified time: 2018-09-18 17:53:55
  */
 
 Component({
