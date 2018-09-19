@@ -2,7 +2,7 @@
  * @Author: Lac
  * @Date: 2018-09-18 16:40:02
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-18 18:22:16
+ * @Last Modified time: 2018-09-19 15:34:08
  */
 
 import { MovieInfoModel } from '../../models/movie-info'
@@ -86,7 +86,6 @@ Page({
     wx.nextTick(() => {
       try {
         movieInfoModel.getMovieInfo(index, res => {
-          console.log(res)
           this.setData({
             status: SUCCESS,
             infoData: res
