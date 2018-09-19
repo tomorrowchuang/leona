@@ -1,0 +1,25 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-09-18 21:19:04 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-09-18 21:59:56
+ */
+
+.container {
+  padding: 30rpx;
+}
+
+.title {
+  margin-bottom: 15rpx;
+  line-height: 36rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #353535;
+}
+
+.content-text {
+  
+  line-height: 40rpx;
+  font-size: 26rpx;
+  color:#353535;
+}

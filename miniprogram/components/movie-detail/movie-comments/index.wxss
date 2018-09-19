@@ -1,0 +1,38 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-09-19 12:31:01 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-09-19 12:39:52
+ */
+
+ .container {
+  padding: 30rpx;
+}
+
+.title {
+  margin-bottom: 25rpx;
+  line-height: 36rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #353535;
+}
+
+.comments {
+  margin-bottom: 40rpx;
+  padding: 20rpx;
+  line-height:40rpx;
+  font-size:26rpx;
+  color:#353535;
+  background: #F4F4F4;
+  border-radius: 8rpx;
+}
+
+.comments:last-child {
+  margin-bottom: 0;
+}
+
+.comments .from {
+  padding-left: 10rpx;
+  color: #B2B2B2;
+  font-size:20rpx;
+}

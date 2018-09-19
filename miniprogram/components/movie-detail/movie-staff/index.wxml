@@ -1,0 +1,21 @@
+<view class='container' >
+  <view class='title' >スタッフ</view>
+  <view class='staff-wrapper' >
+    <view wx:if='{{ data.director }}' class='item'>
+      <text class='common-label' >監督：</text>
+      <tag-comp text='{{ data.director }}' />
+    </view>
+    <view wx:if='{{ data.writer }}' class='item'>
+      <text class='common-label' >脚本：</text>
+      <tag-comp text='{{ data.writer }}' />
+    </view>
+    <view wx:if='{{ data.actor && data.actor.length > 0 }}' class='item'>
+      <text class='actor-label' >出演者：</text>
+      <view class='actor-wrapper' >
+        <block wx:for='{{ data.actor }}' wx:key='idx' >
+          <tag-comp text='{{ item }}' />
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

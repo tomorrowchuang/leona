@@ -1,0 +1,18 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-09-02 16:20:09 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-09-18 22:01:53
+ */
+
+.container {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4rpx 12rpx;
+  font-size:24rpx;
+  color: #333;
+  border-radius: 2px;
+  background: #eee;
+}

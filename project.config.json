@@ -27,7 +27,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -52,6 +52,12 @@
 					"name": "share_index",
 					"pathName": "pages/index/index",
 					"query": "index=5"
+				},
+				{
+					"id": 4,
+					"name": "movie-info",
+					"pathName": "pages/movie-info/index",
+					"query": "index=10"
 				}
 			]
 		}

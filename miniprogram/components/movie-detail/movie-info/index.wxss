@@ -1,0 +1,46 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-09-18 17:54:04 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-09-18 18:48:57
+ */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx;
+}
+
+.cover-wrapper {
+  margin-right: 30rpx;
+  overflow: hidden;
+  width: 225rpx;
+  height: 315rpx;
+  border-radius: 8rpx;
+  background: #F4F4F4;
+}
+
+.cover {
+  margin-right: 30rpx;
+  width: 225rpx;
+  height: 315rpx;
+  border-radius: 8rpx;
+}
+
+.movie-detail {
+  flex: 1;
+}
+
+.movie-detail .title {
+  margin-bottom: 55rpx;
+  line-height: 40rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #353535;
+}
+
+.movie-detail .info-item {
+  margin-bottom: 15rpx;
+  font-size: 26rpx;
+  color: #353535;
+}

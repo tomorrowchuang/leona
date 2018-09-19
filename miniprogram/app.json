@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/photos/index",
     "pages/lyric/index",
-    "pages/webview/index"
+    "pages/webview/index",
+    "pages/movie-info/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

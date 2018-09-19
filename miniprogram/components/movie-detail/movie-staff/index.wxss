@@ -1,0 +1,48 @@
+/*
+ * @Author: Lac 
+ * @Date: 2018-09-18 21:38:40 
+ * @Last Modified by: Lac
+ * @Last Modified time: 2018-09-18 22:20:37
+ */
+
+.container {
+  padding: 30rpx;
+}
+
+.title {
+  margin-bottom: 25rpx;
+  line-height: 36rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #353535;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 25rpx;
+  line-height: 28rpx;
+  font-size: 28rpx;
+  color: #353535;
+  flex-wrap: wrap;
+}
+
+.item .actor-label {
+  margin-top: 4rpx;
+  align-self: flex-start;
+}
+
+.item .common-label {
+  margin-right: 28rpx;
+}
+
+.item .actor-wrapper {
+  width: 560rpx;
+  align-self: flex-start;
+}
+
+.actor-wrapper > tag-comp > view {
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+}

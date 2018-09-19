@@ -17,7 +17,7 @@
   <view class='title' id='page-title' >{{ title }}</view>
   <block wx:if='{{ status === "PENDING" || status === "DEFAULT" }}' >
     <view class="skeleton">
-      <skeleton cover="{{ false }}"></skeleton>
+      <skeleton cover='{{ false }}'></skeleton>
     </view>
   </block>
   <block wx:if='{{ status == "SUCCESS" }}'>

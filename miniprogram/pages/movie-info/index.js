@@ -1,27 +1,23 @@
 /*
  * @Author: Lac
- * @Date: 2018-09-05 16:48:52
+ * @Date: 2018-09-18 16:40:02
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-18 16:55:41
+ * @Last Modified time: 2018-09-18 18:22:16
  */
 
-import { SongModel } from '../../models/song'
+import { MovieInfoModel } from '../../models/movie-info'
 import { DEFAULT, PENDING, SUCCESS, FAIL } from '../../const/async-status'
 import { errorMsg } from '../../const/const'
-import navToggleMixin from '../../utils/nav-toggle-mixin'
-import mergePage from '../../utils/merge-page'
 
-let songModel = new SongModel()
+let movieInfoModel = new MovieInfoModel()
 
-Page(mergePage(navToggleMixin(['', '歌詞']), {
+Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    content: '',
-    title: '',
-    singer: '',
+    infoData: null,
     status: DEFAULT,
     errorMsg: errorMsg
   },
@@ -89,12 +85,11 @@ Page(mergePage(navToggleMixin(['', '歌詞']), {
     })
     wx.nextTick(() => {
       try {
-        songModel.getLyric(index, res => {
+        movieInfoModel.getMovieInfo(index, res => {
+          console.log(res)
           this.setData({
-            content: res.content,
-            title: res.title,
-            singer: res.singer,
-            status: SUCCESS
+            status: SUCCESS,
+            infoData: res
           })
         })
       } catch (err) {
@@ -104,4 +99,4 @@ Page(mergePage(navToggleMixin(['', '歌詞']), {
       }
     })
   }
-}))
+})

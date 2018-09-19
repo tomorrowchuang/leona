@@ -1,0 +1,9 @@
+<view class='container' >
+  <view class='title' >感想・評価</view>
+  <block wx:for='{{ data }}' wx:key='idx' >
+    <view class='comments' >
+      <text class='text' >{{ item }}</text>
+      <text class='from' >@filmarks</text>
+    </view>
+  </block>
+</view>
