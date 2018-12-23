@@ -18,6 +18,11 @@
     data-currentPhoto = "{{ item.url }}"
     style="left:{{ item.left }}; top:{{ item.top }}; position:{{ item.position }}; width:{{ helper.clacWidth(cols) }}; "
   >
-    <image lazy-load src="{{ item.url }}" mode="widthFix" ></image>
+    <image lazy-load
+      wx:if="{{ item.loaded }}"
+      src="{{ item.url }}"
+      mode="widthFix"
+      class="fade_in"
+    />
   </view>
 </view>
