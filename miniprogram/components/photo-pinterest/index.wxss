@@ -2,8 +2,17 @@
  * @Author: Lac 
  * @Date: 2018-08-20 15:09:46 
  * @Last Modified by: Lac
- * @Last Modified time: 2018-09-07 15:56:15
+ * @Last Modified time: 2018-12-23 22:35:54
  */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 
 .container {
   position: relative;
@@ -21,4 +30,8 @@
 
 .container image:last-child {
   padding-bottom: 50rpx;
+}
+
+.fade_in {
+  animation: fadeIn 1s both;
 }

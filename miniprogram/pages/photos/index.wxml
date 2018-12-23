@@ -12,3 +12,7 @@
     <error-msg errMsg='{{ errorMsg }}' />
   </block>
 </view>
+
+<!-- 引入图片预加载组件 -->
+<import src='../../components/img-loader/img-loader.wxml'/>
+<template is='img-loader' data='{{ imgLoadList }}'></template>
